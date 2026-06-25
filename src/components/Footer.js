@@ -1,4 +1,6 @@
-import Link from 'next/link'
+"use client";
+
+import Link from 'next/link';
 
 export default function Footer() {
   return (
@@ -24,10 +26,9 @@ export default function Footer() {
           <div>
             <h4 style={{ fontSize: 13, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 1, color: 'var(--text-muted)', marginBottom: 16 }}>Navigation</h4>
             {[{ href: '/', label: 'Home' }, { href: '/items', label: 'Products' }, { href: '/about', label: 'About Us' }].map(l => (
-              <Link key={l.href} href={l.href} style={{ display: 'block', color: 'var(--text-muted)', fontSize: 14, marginBottom: 10, transition: 'color 0.2s' }}
-                onMouseEnter={e => e.target.style.color = 'var(--blue-glow)'}
-                onMouseLeave={e => e.target.style.color = 'var(--text-muted)'}
-              >{l.label}</Link>
+              <Link key={l.href} href={l.href} className="block text-[var(--text-muted)] text-[14px] mb-[10px] transition-colors duration-200 hover:text-[var(--blue-glow)]">
+                {l.label}
+              </Link>
             ))}
           </div>
 
@@ -35,10 +36,9 @@ export default function Footer() {
           <div>
             <h4 style={{ fontSize: 13, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 1, color: 'var(--text-muted)', marginBottom: 16 }}>Account</h4>
             {[{ href: '/login', label: 'Sign In' }, { href: '/register', label: 'Register' }, { href: '/items/add', label: 'Add Product' }, { href: '/items/manage', label: 'Manage Products' }].map(l => (
-              <Link key={l.href} href={l.href} style={{ display: 'block', color: 'var(--text-muted)', fontSize: 14, marginBottom: 10, transition: 'color 0.2s' }}
-                onMouseEnter={e => e.target.style.color = 'var(--blue-glow)'}
-                onMouseLeave={e => e.target.style.color = 'var(--text-muted)'}
-              >{l.label}</Link>
+              <Link key={l.href} href={l.href} className="block text-[var(--text-muted)] text-[14px] mb-[10px] transition-colors duration-200 hover:text-[var(--blue-glow)]">
+                {l.label}
+              </Link>
             ))}
           </div>
 
@@ -47,16 +47,9 @@ export default function Footer() {
             <h4 style={{ fontSize: 13, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 1, color: 'var(--text-muted)', marginBottom: 16 }}>Connect</h4>
             <div style={{ display: 'flex', gap: 12 }}>
               {['𝕏', 'in', 'fb', 'yt'].map(icon => (
-                <a key={icon} href="#" style={{
-                  width: 40, height: 40, borderRadius: 8,
-                  background: 'var(--navy-card)', border: '1px solid var(--border)',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  fontSize: 13, fontWeight: 700, color: 'var(--text-muted)',
-                  transition: 'all 0.2s',
-                }}
-                  onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--blue)'; e.currentTarget.style.color = 'var(--blue-glow)' }}
-                  onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.color = 'var(--text-muted)' }}
-                >{icon}</a>
+                <a key={icon} href="#" className="w-[40px] h-[40px] rounded-lg bg-[var(--navy-card)] border border-[var(--border)] flex items-center justify-center text-[13px] font-bold text-[var(--text-muted)] transition-all duration-200 hover:border-[var(--blue)] hover:text-[var(--blue-glow)]">
+                  {icon}
+                </a>
               ))}
             </div>
           </div>
@@ -66,10 +59,9 @@ export default function Footer() {
           <p style={{ color: 'var(--text-dim)', fontSize: 13 }}>© 2025 ShopVault. All rights reserved.</p>
           <div style={{ display: 'flex', gap: 20 }}>
             {['Privacy', 'Terms', 'Cookies'].map(t => (
-              <a key={t} href="#" style={{ color: 'var(--text-dim)', fontSize: 13, transition: 'color 0.2s' }}
-                onMouseEnter={e => e.target.style.color = 'var(--blue-glow)'}
-                onMouseLeave={e => e.target.style.color = 'var(--text-dim)'}
-              >{t}</a>
+              <a key={t} href="#" className="text-[var(--text-dim)] text-[13px] transition-colors duration-200 hover:text-[var(--blue-glow)]">
+                {t}
+              </a>
             ))}
           </div>
         </div>
